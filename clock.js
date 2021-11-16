@@ -30,14 +30,15 @@ const now = () => {
     let min = date.getMinutes();
     let sec = date.getSeconds();
 
-    hours = hours < 10 ? "0" + hours : hours;
+    hours = hours < 10 ? "0" + hours : hours;   //om hour är mindre än 10 så lägg till en 0 före, annars behåll den som den är.
     min = min < 10 ? "0" + min : min;
     sec = sec < 10 ? "0" + sec : sec;
 
-    //console.log(hours, min, sec);
     hourEl.innerText = `${hours}`;
     minuteEl.innerText = `${min}`;
     secondsEl.innerText = `${sec}`;
 };
 
-setInterval("now()", 1000);
+setInterval(() => {
+    now();
+}, 1000);
